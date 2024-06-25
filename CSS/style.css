@@ -1,0 +1,211 @@
+@import url('./variables.css');
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: var(--main-background-color);
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    z-index: 3;
+}
+
+hr {
+    width: 50%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--regular-color);
+}
+
+.nav-links li a:hover {
+    font-weight: 700;
+    font-style: normal;
+    color: var(--title-color);
+    text-decoration: overline;
+}
+
+/* INIT SECTION *************************************************************************/
+
+.content__home, .content__about {
+    margin-top: 5rem;
+    margin-left: 10rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+    color: var(--regular-color);
+}
+
+.space-separator {
+    margin-top: 30rem !important;
+}
+
+.title-header {
+    color: var(--title-color);
+    display: flex;
+
+}
+
+.title-header__image img {
+    width: 80%;
+}
+
+.title-header__text {
+    margin-left: .5rem;
+}
+
+.title-header__text--firts {
+    color: var(--regular-color);
+}
+
+.title-header__text--firts span{
+    color: var(--title-color);
+}
+
+.title-header__text--second {
+    animation: moveInRight 1s ease-in-out;
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.title-content__text {
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.extra-title {
+    position: relative;
+    color: var(--title-color);
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 3%;
+}
+
+.extra-title hr {
+    position: absolute;
+    width: 50%;
+    color: var(--regular-color);
+}
+
+.social {
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+}
+
+.social ul li{
+    margin-bottom: 6px;
+}
+
+.social--special {
+    margin-bottom: 0px !important;
+}
+
+/* ABOUT SECTION *************************************************************************/
+
+.content__about__title-header {
+    color: var(--title-color);
+    display: flex;
+}
+
+.btn:link,
+.btn:visited {
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+}
+
+.btn-pink {
+    background-color: var(--principal-color);
+    color: var(--main-background-color);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-pink::after {
+    background-color: #FFECFC;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.text-content__description {
+    color: var(--principal-color)
+}
+
+.text-content__description--gray {
+    color: var(--regular-color);
+}
