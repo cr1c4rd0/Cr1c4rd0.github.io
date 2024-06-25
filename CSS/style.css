@@ -3,78 +3,65 @@
 html {
     scroll-behavior: smooth;
 }
-body {
-    background-color: var(--main-background-color);
-    font-family: "Roboto", sans-serif;
-}
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 50px;
-    z-index: 3;
+body {
+    background-color: var(--main-background-color) !important;
+    font-family: "Roboto", sans-serif !important;
+    color: var(--regular-color) !important;
 }
 
 hr {
     width: 50%;
+    border: var(--regular-color) 2px solid !important;
 }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
+.navbar {
+    background-color: var(--main-background-color) !important;
 }
 
-.nav-links li a {
-    text-decoration: none;
-    color: var(--regular-color);
+.collapse {
+    justify-content: right;
 }
 
-.nav-links li a:hover {
-    font-weight: 700;
-    font-style: normal;
-    color: var(--title-color);
-    text-decoration: overline;
+.text-align--left {
+    text-align: left;
+}
+
+.text-align--right {
+    text-align: right;
+}
+
+.container {
+    margin-top: 4rem !important;
+}
+
+.space-separator {
+    margin-top: 3rem !important;
+}
+
+.social {
+    text-align: center;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+}
+
+.social__linkedin {
+    margin-top: 4px !important;
+
 }
 
 /* INIT SECTION *************************************************************************/
 
-.content__home, .content__about {
-    margin-top: 5rem;
-    margin-left: 10rem;
-    margin-right: 5rem;
-    margin-bottom: 5rem;
-    color: var(--regular-color);
+.bread-text--white {
+    color: var(--title-color) !important;
+    font-weight: bold;
 }
 
-.space-separator {
-    margin-top: 30rem !important;
-}
-
-.title-header {
-    color: var(--title-color);
-    display: flex;
-
-}
-
-.title-header__image img {
-    width: 80%;
-}
-
-.title-header__text {
-    margin-left: .5rem;
-}
-
-.title-header__text--firts {
-    color: var(--regular-color);
-}
-
-.title-header__text--firts span{
-    color: var(--title-color);
-}
-
-.title-header__text--second {
+.title-content {
+    font-weight: bold;
     animation: moveInRight 1s ease-in-out;
 }
 
@@ -116,97 +103,36 @@ hr {
     }
 }
 
-.extra-title {
-    position: relative;
-    color: var(--title-color);
-    font-weight: bold;
-    text-align: left;
-    margin-bottom: 3%;
-}
-
-.extra-title hr {
-    position: absolute;
-    width: 50%;
-    color: var(--regular-color);
-}
-
-.social {
-    position: fixed;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    bottom: 0;
-}
-
-.social ul li{
-    margin-bottom: 6px;
-}
-
-.social--special {
-    margin-bottom: 0px !important;
-}
-
 /* ABOUT SECTION *************************************************************************/
-
-.content__about__title-header {
-    color: var(--title-color);
-    display: flex;
+.button-pink {
+    color: var(--principal-color) !important;
+    border-color: var(--principal-color) !important;
 }
 
-.btn:link,
-.btn:visited {
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s;
-    position: relative;
-    font-weight: bold;
-    margin-left: 1rem;
+.button-pink:hover {
+    background-color: var(--principal-color) !important;
+    color: var(--main-background-color) !important;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+.text-pink {
+    color: var(--principal-color) !important;
+    border-color: var(--principal-color) !important;
 }
 
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+.title-content__text {
+    font-size: 4rem;
 }
 
-.btn-pink {
-    background-color: var(--principal-color);
-    color: var(--main-background-color);
+.buttons-section {
+    margin-top: 2rem !important;
 }
 
-.btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0%;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
+.buttons-section a {
+    margin-right: 1rem !important;
 }
 
-.btn-pink::after {
-    background-color: #FFECFC;
-}
+/* PORTFOLIO     SECTION *************************************************************************/
 
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-.text-content__description {
-    color: var(--principal-color);
-}
-
-.text-content__description--gray {
-    color: var(--regular-color);
-    
+.portfolio-list {
+    list-style: none;
 }

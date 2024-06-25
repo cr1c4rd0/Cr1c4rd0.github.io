@@ -9,55 +9,159 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-
 <body>
-    <header>
-        <div class="logo">
-            <img src="./Images/Logo.png" alt="Logo Cristian Ricardo">
+    <nav class="navbar border-body navbar-expand-lg sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="./Images/Logo.png" alt="Logo Cristian Ricardo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">< __Init__ /></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./about.html">< About /></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./portfolio.html">< Portfolio /></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">< Contact /></a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <ul class="nav-links roboto-regular">
-            <li><a href="index.html">< __Init__ /></Home></a></li>
-            <li><a href="about.html">< About /></a></li>
-            <li><a href="#portfolio">< Portfolio /></a></li>
-            <li><a href="#contact">< Contact /></a></li>
-        </ul>
-    </header>
-    <div class="social">
-        <ul>
-            <li class="social--special social__github icon"><a href="https://github.com/cr1c4rd0" target="_blank"><img
-                        src="./Images/Icon_ Github.png"></a></li>
-            <li><a class="social__behance icon" href="https://www.behance.net/cristianri30a9" target="_blank"><img
-                        src="./Images/Icon_ Behance.png"></a></li>
-            <li><a class="social__linkedin icon" href="https://www.linkedin.com/in/cristian-ricardo/"
-                    target="_blank"><img src="./Images/Icon_ Linkedin.png"></a></li>
-        </ul>
-    </div>
-    <div class="content__about">
-        <section class="content__about__title-header">
-            <div class="title-header__image">
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 text-center">
                 <img src="./Images/ProfilePic.png">
             </div>
-            <div>
-                <div class="title-header__text">
-                    <div class="title-header__text--firts text-lg">Cristian<span class="roboto-bold">.
-                            < About />
-                        </span></div>
-                    <div class="title-header__text--second text-xl">Download my</div>
+            <div class="col-md text-align--left">
+                <div class="row">
+                    <div class="text-lg">Cristian<span class="bread-text--white"> < About /></span></div>
                 </div>
-                <div class="buttons">
-                    <a class="btn text-md btn-pink" href="#">CV_En</a>
-                    <a class="btn text-md btn-pink" href="#">CV_Es</a>
+                <div class="row">
+                    <div class="col-5">
+                        <div class="title-content__text">Download my</div>
+                    </div>
+                    <div class="col-md buttons-section">
+                        <a class="btn btn-outline-light btn-lg button-pink">CV_En</a>
+                        <a class="btn btn-outline-light btn-lg button-pink">CV_Es</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8 text-pink">
+                        <p>Software developer deeply influenced by storytelling, interactions, and user experience. Passionate about music and
+                        video games.</p>
+                        <p>From Colombia, based in Jamundí.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md text-sm">
+                        <p># He / Him</p>
+                        <p># UX/UI Lead at Cafeto Software</p>
+                    </div>
                 </div>
             </div>
-        </section>
-        <section class="text-content__description">
-            <p>Software developer deeply influenced by storytelling, interactions, and user experience. Passionate about music and
-            video games.</p>
-            <p>From Colombia, based in Jamundí.</p>
-            <p class="text-content__description--gray text-md"># He / Him</p>
-            <p class="text-content__description--gray text-md"># UX/UI Lead at <a href="https://cafeto.co/" target="_blank">Cafeto Software</a></p>
-        </section>
+        </div>
+        <div class="row space-separator">
+            <div class="col-md">
+                <h4>Main Skills</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <p>User Interface Design, User Experience,
+                User-Centered Design, Figma, Sketch, Adobe XD.</p>
+            </div>
+            <div class="col-md">
+                <p>Software Developer, User Interface Developer, HTML, CSS, JavaScript.</p>
+            </div>
+            <div class="col-md">
+                <p>Python Developer, FastAPI.</p>
+            </div>
+        </div>
+        <div class="row space-separator">
+            <div class="col-md">
+                <h4>Experience</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <div class="text-pink"><strong>UX/UI Lead</strong></div>
+                <div>Cafeto Software</div>
+                <div>* current</div>
+            </div>
+            <div class="col-md">
+                <div class="text-pink"><strong>Engineer Manager</strong></div>
+                <div>Cafeto Software</div>
+                <div>Feb 2021 - Jun 2021</div>
+            </div>
+            <div class="col-md">
+                <div class="text-pink"><strong>UX/UI Designer</strong></div>
+                <div>Cafeto Software</div>
+                <div>May 2017 - Feb 2021</div>
+            </div>
+        </div>
+        <div class="row space-separator">
+            <div class="col-md">
+                <div class="text-pink"><strong>Frontend Developer</strong></div>
+                <div>Open International</div>
+                <div>Apr 2015 - Apr 2017</div>
+            </div>
+            <div class="col-md">
+                <div class="text-pink"><strong>Web Developer</strong></div>
+                <div>Open International</div>
+                <div>May 2012 - Apr 2015</div>
+            </div>
+            <div class="col-md">
+                <div class="text-pink"><strong>UI Developer</strong></div>
+                <div>Clínica San Francisco</div>
+                <div>Mar 2011 - Oct 2011</div>
+            </div>
+        </div>
+        <div class="row space-separator">
+            <div class="col-md">
+                <h4>Also busy with</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <p>Guitar Bass Player</p>
+            </div>
+            <div class="col-md">
+                <p>Gamer</p>
+            </div>
+        </div>
+        <div class="row space-separator"></div>
     </div>
+    <div class="social">
+        <div class="row ">
+            <div class="col-md">
+                <a href="https://github.com/cr1c4rd0" target="_blank"><img src="./Images/Icon_ Github.png"></a>
+            </div>
+        </div>
+        <div class="row social__behance">
+            <div class="col-md">
+                <a href="https://www.behance.net/cristianri30a9" target="_blank"><img src="./Images/Icon_ Behance.png"></a>
+            </div>
+        </div>
+        <div class="row social__linkedin">
+            <div class="col-md">
+                <a href="https://www.linkedin.com/in/cristian-ricardo/" target="_blank"><img
+                        src="./Images/Icon_ Linkedin.png"></a>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 </html>
