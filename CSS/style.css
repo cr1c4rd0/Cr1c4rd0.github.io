@@ -135,4 +135,23 @@ hr {
 
 .portfolio-list {
     list-style: none;
+    
+}
+
+.portfolio-list a {
+    padding: 4px;
+    text-decoration: none;
+    color: var(--title-color) !important;
+    cursor: pointer;
+}
+
+.portfolio-button:hover {
+    background-color: var(--principal-color) !important;
+    color: var(--main-background-color) !important;
+    border-radius: 4px;
+}
+
+.modal-dialog {
+    background-color: var(--main-background-color) !important;
+    color: var(--title-color) !important;
 }
