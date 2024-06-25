@@ -203,9 +203,10 @@ hr {
 }
 
 .text-content__description {
-    color: var(--principal-color)
+    color: var(--principal-color);
 }
 
 .text-content__description--gray {
     color: var(--regular-color);
+    
 }
