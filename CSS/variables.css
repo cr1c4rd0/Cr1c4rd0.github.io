@@ -1,8 +1,9 @@
 :root {
-    --main-background-color: #0C0C0C;
+    --main-background-color: #181818;
     --title-color: #FFFFFF;
     --regular-color: #CECDD2;
     --principal-color: #E4B5DC;
+    --navbar-background-color: #1B1B1B;
 }
 
 .roboto-thin {

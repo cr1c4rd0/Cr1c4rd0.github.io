@@ -16,7 +16,7 @@ hr {
 }
 
 .navbar {
-    background-color: var(--main-background-color) !important;
+    background-color: var(--navbar-background-color) !important;
 }
 
 .collapse {
@@ -29,10 +29,6 @@ hr {
 
 .text-align--right {
     text-align: right;
-}
-
-.container {
-    margin-top: 4rem !important;
 }
 
 .space-separator {
@@ -51,107 +47,4 @@ hr {
 .social__linkedin {
     margin-top: 4px !important;
 
-}
-
-/* INIT SECTION *************************************************************************/
-
-.bread-text--white {
-    color: var(--title-color) !important;
-    font-weight: bold;
-}
-
-.title-content {
-    font-weight: bold;
-    animation: moveInRight 1s ease-in-out;
-}
-
-@keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(10rem);
-    }
-
-    80% {
-        transform: translateX(-1rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-.title-content__text {
-    animation-name: moveInLeft;
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-}
-
-@keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-10rem);
-    }
-
-    80% {
-        transform: translateX(1rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-/* ABOUT SECTION *************************************************************************/
-.button-pink {
-    color: var(--principal-color) !important;
-    border-color: var(--principal-color) !important;
-}
-
-.button-pink:hover {
-    background-color: var(--principal-color) !important;
-    color: var(--main-background-color) !important;
-}
-
-.text-pink {
-    color: var(--principal-color) !important;
-    border-color: var(--principal-color) !important;
-}
-
-.title-content__text {
-    font-size: 4rem;
-}
-
-.buttons-section {
-    margin-top: 2rem !important;
-}
-
-.buttons-section a {
-    margin-right: 1rem !important;
-}
-
-/* PORTFOLIO     SECTION *************************************************************************/
-
-.portfolio-list {
-    list-style: none;
-    
-}
-
-.portfolio-list a {
-    padding: 4px;
-    text-decoration: none;
-    color: var(--title-color) !important;
-    cursor: pointer;
-}
-
-.portfolio-button:hover {
-    background-color: var(--principal-color) !important;
-    color: var(--main-background-color) !important;
-    border-radius: 4px;
-}
-
-.modal-dialog {
-    background-color: var(--main-background-color) !important;
-    color: var(--title-color) !important;
 }
