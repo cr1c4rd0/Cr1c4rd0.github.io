@@ -8,6 +8,13 @@ body {
     background-color: var(--main-background-color) !important;
     font-family: "Roboto", sans-serif !important;
     color: var(--regular-color) !important;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll on mobile */
+}
+
+/* Enhancing typography readability */
+p {
+    line-height: 1.6;
 }
 
 hr {
@@ -17,6 +24,8 @@ hr {
 
 .navbar {
     background-color: var(--navbar-background-color) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    /* Adding slight shadow for depth */
 }
 
 .collapse {
@@ -36,15 +45,355 @@ hr {
 }
 
 .social {
-    text-align: center;
     margin-left: 1rem;
     margin-bottom: 2rem;
     position: fixed;
-    z-index: 2;
+    z-index: 10;
+    /* Ensure social icons are above content */
     bottom: 0;
+    left: 0;
+    /* Add left explicit positioning */
+}
+
+/* Hide side social icons on smaller mobile screens in favor of using the bottom ones or just keeping it clean */
+@media (max-width: 768px) {
+    .social {
+        display: none;
+    }
 }
 
 .social__linkedin {
     margin-top: 4px !important;
 
+}
+
+/* --- Hero Section Styles --- */
+.hero-section {
+    min-height: 80vh;
+    /* Adjust as needed */
+    padding: 100px 0;
+}
+
+.hero-subtitle {
+    color: var(--regular-color);
+    opacity: 0.8;
+}
+
+.hero-description {
+    max-width: 540px;
+    line-height: 1.6;
+}
+
+/* Base button styles */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Primary Button (Ver mi trabajo) */
+.btn-primary {
+    background-color: transparent !important;
+    color: var(--principal-color) !important;
+    border: 1px solid var(--principal-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: rgba(228, 181, 220, 0.1) !important;
+    /* Slight transparent pink background */
+    box-shadow: 0 0 10px rgba(228, 181, 220, 0.5);
+    /* Glow effect */
+    transform: translateY(-2px);
+    /* Slight lift */
+}
+
+/* Outline Button (Descargar CV) */
+.btn-outline {
+    background-color: transparent !important;
+    color: var(--regular-color) !important;
+    border: 1px solid var(--regular-color) !important;
+}
+
+.btn-outline:hover {
+    background-color: rgba(206, 205, 210, 0.1) !important;
+    /* Slight transparent white background */
+    border-color: var(--title-color) !important;
+    color: var(--title-color) !important;
+    transform: translateY(-2px);
+}
+
+/* Hero abstract visual */
+.hero-image-placeholder {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* Abstract shape or gradient */
+    background: linear-gradient(135deg, rgba(228, 181, 220, 0.2) 0%, rgba(24, 24, 24, 0) 100%);
+    border: 2px dashed var(--principal-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glow-effect {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: var(--principal-color);
+    filter: blur(60px);
+    opacity: 0.3;
+    animation: pulse 4s infinite alternate;
+}
+
+/* Simple pulse animation for the visual element */
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 0.4;
+    }
+}
+
+/* Animations (Fade in structure) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- About Section Styles --- */
+.about-section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+.section-divider {
+    border-top: 1px solid var(--regular-color) !important;
+    opacity: 0.2;
+    margin-left: 20px !important;
+}
+
+.about-text {
+    color: var(--regular-color);
+}
+
+.skills-list {
+    margin-top: 20px;
+}
+
+.skill-tag {
+    padding: 8px 16px;
+    background-color: rgba(228, 181, 220, 0.1);
+    border: 1px solid rgba(228, 181, 220, 0.3);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--title-color);
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: rgba(228, 181, 220, 0.2);
+    transform: translateY(-2px);
+    color: var(--principal-color);
+}
+
+.about-image-wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.about-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--principal-color);
+    border-radius: 4px;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.about-image-wrapper:hover::after {
+    top: 15px;
+    left: 15px;
+}
+
+.about-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--regular-color);
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.about-image-wrapper:hover .about-image-placeholder {
+    transform: translate(-5px, -5px);
+}
+
+/* --- Portfolio Section Styles --- */
+.portfolio-section {
+    padding: 100px 0;
+}
+
+.project-row {
+    position: relative;
+    z-index: 1;
+}
+
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    border-radius: 4px;
+    background-color: var(--regular-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--principal-color);
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.project-image-wrapper:hover::after {
+    opacity: 0;
+}
+
+.project-image-placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+.project-overline {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    color: var(--title-color);
+}
+
+.project-description-box {
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+.project-description-box:hover {
+    box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.9);
+}
+
+.project-tech-list {
+    color: var(--regular-color);
+}
+
+.project-link {
+    color: var(--regular-color);
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--principal-color);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments for portfolio */
+@media (max-width: 991px) {
+    .project-content-col {
+        text-align: left !important;
+    }
+
+    .project-description-box {
+        text-align: left !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+        box-shadow: none;
+    }
+
+    .project-tech-list {
+        justify-content: flex-start !important;
+    }
+
+    .project-links {
+        justify-content: flex-start !important;
+    }
+}
+
+/* --- Back To Top Button --- */
+#backToTopBtn {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--principal-color);
+    color: var(--main-background-color);
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTopBtn:hover {
+    background-color: var(--title-color);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Adjust position on mobile so it doesn't overlap with other things */
+@media (max-width: 768px) {
+    #backToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px;
+    }
 }
