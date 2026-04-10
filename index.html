@@ -94,7 +94,7 @@
         </p>
         <div class="hero-cta d-flex gap-3 flex-wrap">
           <a href="#portfolio" class="btn btn-primary d-inline-flex align-items-center">Ver proyectos <span class="ms-2">→</span></a>
-          <a href="Files/CV/CV_Es.pdf" class="btn btn-outline" target="_blank">Descargar CV</a>
+          <a href="Files/CV/Cristian_Ricardo-CV_ProductOwnerSr.pdf" class="btn btn-outline" target="_blank">Descargar CV</a>
         </div>
       </div>
       <div class="col-lg-5 d-none d-lg-flex justify-content-center fade-in" style="animation-delay:.2s">
@@ -1034,6 +1034,10 @@
   <p class="roboto-light text-xs m-0" style="color:var(--regular-color);opacity:.7">
     Diseñado y construido por Cristian Ricardo · Cali, Colombia
   </p>
+  <p class="roboto-light text-xs mt-2" style="color:var(--principal-color);opacity:.8">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-1 mb-1"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+    <span id="visits-count">...</span> visitas
+  </p>
 </footer>
 
 <!-- Social -->
@@ -1105,6 +1109,17 @@
       }
     });
   });
+
+  // Visits counter
+  fetch('https://api.counterapi.dev/v1/cr1c4rd0/cr1c4rd0.github.io/up')
+    .then(res => res.json())
+    .then(data => {
+      const counterEl = document.getElementById('visits-count');
+      if (counterEl && data && data.count) {
+        counterEl.innerText = data.count.toLocaleString();
+      }
+    })
+    .catch(err => console.error('Error fetching counter:', err));
 </script>
 </body>
 </html>
