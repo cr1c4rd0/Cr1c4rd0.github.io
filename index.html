@@ -1,302 +1,1002 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
-    <title>Cricardo Design | H0m3</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Cristian Ricardo | Product Owner · UX Designer · Software Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cristian Ricardo — Product Owner, Analista Funcional y UX/UI Designer con más de 10 años en la industria del software. Cali, Colombia.">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    /* ── Filter Buttons ── */
+    .filter-btn { background: transparent; border: 1px solid var(--principal-color); color: var(--principal-color); border-radius: 4px; padding: 6px 18px; font-size: .82rem; font-family: 'Roboto', sans-serif; cursor: pointer; transition: all .2s; }
+    .filter-btn:hover, .filter-btn.active { background: var(--principal-color); color: var(--main-background-color); }
+    /* ── Project Cards ── */
+    .proj-card { background: var(--navbar-background-color); border-radius: 8px; padding: 24px; height: 100%; transition: transform .2s, box-shadow .2s; border: 1px solid transparent; }
+    .proj-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(100,255,218,.08); border-color: rgba(100,255,218,.15); }
+    .proj-tag { display: inline-block; font-size: .72rem; color: var(--principal-color); border: 1px solid var(--principal-color); border-radius: 3px; padding: 2px 8px; margin: 2px; }
+    .proj-sector { font-size: .78rem; color: var(--regular-color); opacity: .7; margin-bottom: 8px; }
+    .proj-title { font-size: 1.05rem; font-weight: 700; color: var(--principal-color); margin-bottom: 6px; }
+    .proj-client { font-size: .82rem; color: #8892b0; margin-bottom: 10px; }
+    .proj-desc { font-size: .83rem; color: var(--regular-color); line-height: 1.55; }
+    .proj-role { font-size: .75rem; background: rgba(100,255,218,.08); color: var(--principal-color); padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+    /* ── Cert Cards ── */
+    .cert-card { background: var(--navbar-background-color); border-radius: 8px; padding: 20px; border-left: 3px solid var(--principal-color); transition: transform .2s; }
+    .cert-card:hover { transform: translateY(-3px); }
+    .cert-card.anthropic { border-color: #6e7c5e; }
+    .cert-card.scrum    { border-color: #2980b9; }
+    .cert-card.platzi   { border-color: #98ca3f; }
+    .cert-card.udemy    { border-color: #a435f0; }
+    .cert-card.ibm      { border-color: #0f62fe; }
+    .cert-card.coderhouse { border-color: #f5c800; }
+    .cert-badge { font-size: .68rem; font-weight: 700; letter-spacing: .05em; padding: 2px 8px; border-radius: 3px; }
+    .badge-anthropic  { background: #6e7c5e22; color: #a8b89a; }
+    .badge-scrum      { background: #2980b922; color: #5daad4; }
+    .badge-platzi     { background: #98ca3f22; color: #98ca3f; }
+    .badge-udemy      { background: #a435f022; color: #c47ef5; }
+    .badge-ibm        { background: #0f62fe22; color: #5a8ff5; }
+    .badge-coderhouse { background: #f5c80022; color: #f5c800; }
+    .cert-title { font-size: .92rem; font-weight: 700; color: #ccd6f6; margin: 6px 0 4px; }
+    .cert-year { font-size: .75rem; color: #8892b0; }
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before { content:''; position:absolute; left:8px; top:0; bottom:0; width:2px; background: rgba(100,255,218,.2); }
+    .tl-item { position: relative; margin-bottom: 32px; }
+    .tl-dot { position: absolute; left: -24px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--principal-color); border: 2px solid var(--main-background-color); }
+    .tl-date { font-size: .78rem; color: #8892b0; margin-bottom: 4px; }
+    .tl-company { font-size: 1rem; font-weight: 700; color: #ccd6f6; }
+    .tl-role { font-size: .85rem; color: var(--principal-color); margin-bottom: 6px; }
+    .tl-desc { font-size: .82rem; color: var(--regular-color); line-height: 1.55; }
+    /* ── Section nav ── */
+    .section-num { color: var(--principal-color); }
+    /* ── Hidden project ── */
+    .proj-item.hidden { display: none !important; }
+  </style>
 </head>
+
 <!-- Navbar -->
 <nav class="navbar border-body navbar-expand-lg sticky-top" data-bs-theme="dark">
-    <div class="container">
-        <a class="navbar-brand" href="./index.html"><img src="./Images/Logo.png" alt="Logo Cristian Ricardo"></a>
+  <div class="container">
+    <a class="navbar-brand" href="./index.html"><img src="./Images/Logo.png" alt="Logo Cristian Ricardo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav gap-3">
+        <li class="nav-item"><a class="nav-link roboto-light" href="#about">Sobre Mí</a></li>
+        <li class="nav-item"><a class="nav-link roboto-light" href="#experience">Experiencia</a></li>
+        <li class="nav-item"><a class="nav-link roboto-light" href="#portfolio">Proyectos</a></li>
+        <li class="nav-item"><a class="nav-link roboto-light" href="#certifications">Certificaciones</a></li>
+        <li class="nav-item"><a class="nav-link roboto-light" href="#contact">Contacto</a></li>
+      </ul>
     </div>
+  </div>
 </nav>
-<!-- Hero Section -->
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ══════════════════════════════════════════════════════════ -->
 <header id="home" class="hero-section text-align--left d-flex align-items-center">
-    <div class="container space-separator">
-        <div class="row align-items-center">
-            <div class="col-lg-6 hero-content fade-in">
-                <p class="greeting roboto-light text-md mb-2" style="color: var(--principal-color);">Hola, mi nombre es
-                </p>
-                <h1 class="hero-title roboto-black display-2 mb-3">Cristian Ricardo.</h1>
-                <h2 class="hero-subtitle roboto-medium display-5 mb-4">Construyo experiencias digitales.</h2>
-                <p class="hero-description roboto-regular text-xs mb-5">
-                    Soy un Ingeniero de Software enfocado en crear soluciones tecnológicas excepcionales y experiencias
-                    de usuario atractivas. Actualmente, estoy enfocado en construir productos accesibles y centrados en
-                    las personas.
-                </p>
-                <div class="hero-cta d-flex gap-3">
-                    <a href="#portfolio" class="btn btn-primary d-inline-flex align-items-center">
-                        Ver mi trabajo <span class="ms-2">→</span>
-                    </a>
-                    <a href="Files/CV/CV_En.pdf" class="btn btn-outline">Descargar CV EN</a>
-                    <a href="Files/CV/CV_Es.pdf" class="btn btn-outline">Descargar CV ES</a>
-                </div>
-            </div>
-            <div class="col-lg-6 d-none d-lg-flex justify-content-center fade-in" style="animation-delay: 0.2s;">
-                <!-- Placeholder para imagen de perfil abstracta / memoji / foto -->
-                <div class="hero-image-placeholder">
-                    <div class="glow-effect"></div>
-                </div>
-            </div>
+  <div class="container space-separator">
+    <div class="row align-items-center">
+      <div class="col-lg-7 hero-content fade-in">
+        <p class="greeting roboto-light text-md mb-2" style="color:var(--principal-color);">Hola, mi nombre es</p>
+        <h1 class="hero-title roboto-black display-2 mb-3">Cristian Ricardo.</h1>
+        <h2 class="hero-subtitle roboto-medium display-5 mb-4">Convierto problemas complejos en productos digitales.</h2>
+        <p class="hero-description roboto-regular text-xs mb-5">
+          Product Owner · Analista Funcional · UX/UI Designer con <strong>+10 años</strong> en la industria del software.
+          Perfil híbrido diseño + ingeniería especializado en discovery de producto, gestión de backlog y liderazgo
+          de equipos bajo Scrum. <strong>AI mindset real:</strong> uso Claude, NotebookLM y Gemini Studio/Stitch
+          como parte de mi metodología de producto — no como experimento.
+        </p>
+        <div class="hero-cta d-flex gap-3 flex-wrap">
+          <a href="#portfolio" class="btn btn-primary d-inline-flex align-items-center">Ver proyectos <span class="ms-2">→</span></a>
+          <a href="Files/CV/CV_Es.pdf" class="btn btn-outline" target="_blank">Descargar CV</a>
         </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-flex justify-content-center fade-in" style="animation-delay:.2s">
+        <div class="hero-image-placeholder" style="position:relative">
+          <div class="glow-effect"></div>
+          <img src="./Images/ProfilePic.jpg" alt="Cristian Ricardo"
+               style="width:100%;max-width:300px;border-radius:8px;object-fit:cover;position:relative;z-index:2;"
+               onerror="this.style.display='none'">
+        </div>
+      </div>
     </div>
+  </div>
 </header>
 
-<!-- About Section -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- ABOUT -->
+<!-- ══════════════════════════════════════════════════════════ -->
 <section id="about" class="about-section space-separator">
-    <div class="container">
-        <div class="row mb-5 fade-in">
-            <div class="col-12 d-flex align-items-center mb-4">
-                <h2 class="section-title roboto-bold display-6 mb-0 me-4">
-                    <span style="color: var(--principal-color);">01.</span> Sobre Mí
-                </h2>
-                <hr class="section-divider flex-grow-1 m-0">
-            </div>
-        </div>
-        <div class="row fade-in" style="animation-delay: 0.2s;">
-            <div class="col-lg-7">
-                <div class="about-text roboto-regular text-sm">
-                    <p class="mb-4">
-                        ¡Hola! Soy Cristian, y disfruto crear cosas que viven en internet. Mi interés en el desarrollo
-                        web empezó desde que vi cómo unas líneas de código podían transformarse en una experiencia
-                        interactiva para los usuarios.
-                    </p>
-                    <p class="mb-4">
-                        He tenido el privilegio de trabajar en diferentes proyectos, desde sistemas internos hasta
-                        productos orientados al consumidor final. Mi enfoque principal hoy en día es construir
-                        aplicaciones accesibles, inclusivas y experiencias digitales en general que sean sólidas desde
-                        la base.
-                    </p>
-                    <p class="mb-4">
-                        Aquí hay algunas tecnologías con las que he estado trabajando recientemente:
-                    </p>
-                    <ul class="skills-list d-flex flex-wrap gap-2 list-unstyled mt-3">
-                        <li class="skill-tag">JavaScript (ES6+)</li>
-                        <li class="skill-tag">React</li>
-                        <li class="skill-tag">Node.js</li>
-                        <li class="skill-tag">HTML & CSS</li>
-                        <li class="skill-tag">Figma</li>
-                        <li class="skill-tag">UX/UI Design</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-5 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
-                <div class="about-image-wrapper">
-                    <!-- Aquí puedes colocar una foto tuya -->
-                    <div
-                        class="about-image-placeholder d-flex align-items-center justify-content-center text-center p-4">
-                        <p class="m-0 roboto-medium" style="color: var(--main-background-color);">Tu Foto Aquí<br><span
-                                class="roboto-regular text-xs">(Añade tu imagen en la carpeta Images)</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row mb-5 fade-in">
+      <div class="col-12 d-flex align-items-center mb-4">
+        <h2 class="section-title roboto-bold display-6 mb-0 me-4"><span class="section-num">01.</span> Sobre Mí</h2>
+        <hr class="section-divider flex-grow-1 m-0">
+      </div>
     </div>
+    <div class="row fade-in" style="animation-delay:.2s">
+      <div class="col-lg-7">
+        <div class="about-text roboto-regular text-sm">
+          <p class="mb-4">Soy Cristian, Product Owner y Analista Funcional basado en Cali, Colombia. Mi trayectoria nació en el diseño gráfico, evolucionó hacia la ingeniería de software y hoy converge en el rol de producto: esa intersección donde el diseño centrado en el usuario se encuentra con la viabilidad técnica y los objetivos de negocio.</p>
+          <p class="mb-4">He liderado el discovery completo de plataformas SaaS B2B, gestionado backlogs con 35+ Historias de Usuario para productos que sirven a millones de clientes, y actuado como Product Owner + Scrum Master en sistemas adoptados por más de 500 organizaciones. Mi diferenciador es el <strong style="color:var(--principal-color)">AI mindset aplicado</strong>: uso Claude, NotebookLM y Gemini Studio/Stitch directamente en mi flujo de trabajo.</p>
+          <p class="mb-3">Herramientas y metodologías:</p>
+          <ul class="skills-list d-flex flex-wrap gap-2 list-unstyled mt-3">
+            <li class="skill-tag">Product Discovery</li><li class="skill-tag">Scrum / Agile</li>
+            <li class="skill-tag">Jira · ClickUp</li><li class="skill-tag">Figma</li>
+            <li class="skill-tag">BPMN · Visio</li><li class="skill-tag">Design Thinking</li>
+            <li class="skill-tag">JTBD · Gherkin</li><li class="skill-tag">Claude · NotebookLM</li>
+            <li class="skill-tag">Gemini Studio / Stitch</li><li class="skill-tag">HTML5 · CSS3 · JS</li>
+            <li class="skill-tag">Angular · Flutter</li><li class="skill-tag">Power BI</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-5 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
+        <div class="about-image-wrapper">
+          <img src="./Images/ProfilePic.jpg" alt="Cristian Ricardo" class="img-fluid rounded"
+               style="max-width:280px;border-radius:8px !important;"
+               onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Portfolio Section -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- EXPERIENCE TIMELINE -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="experience" class="space-separator">
+  <div class="container">
+    <div class="row mb-5 fade-in">
+      <div class="col-12 d-flex align-items-center mb-4">
+        <h2 class="section-title roboto-bold display-6 mb-0 me-4"><span class="section-num">02.</span> Experiencia</h2>
+        <hr class="section-divider flex-grow-1 m-0">
+      </div>
+    </div>
+    <div class="row fade-in">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">Ago 2025 – Presente</div>
+            <div class="tl-company">Servinformación</div>
+            <div class="tl-role">Analista Funcional / Product Owner / Product Designer</div>
+            <div class="tl-desc">Definición funcional y diseño de producto para tres proyectos simultáneos: RECOMENDADOR (CCB · 6M+ clientes), REVINCULAMOS (Crezcamos · IA conversacional) y METIS 360 (DIAN · aduanas). 89+ Historias de Usuario redactadas. Uso activo de Claude y Visio/BPMN.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">Abr 2017 – Oct 2024 · Ago 2025 – Presente</div>
+            <div class="tl-company">Cafeto Software S.A.S</div>
+            <div class="tl-role">Software Architect · UX/UI Lead · Engineering Manager</div>
+            <div class="tl-desc">+7 años diseñando y liderando 29+ proyectos para clientes en EE.UU., LATAM y Europa. Sectores: Fintech, EdTech, Farma, Real Estate, IoT, SaaS enterprise. Ascendido a Software Architect con contrato indefinido. Gestión de equipos distribuidos (Colombia, India). Actualmente: ZENSEI (HRTech SaaS 0→1) y Protección en Línea (Seguridad Omega).</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">Oct – Dic 2024</div>
+            <div class="tl-company">Markaf Colombia SAS</div>
+            <div class="tl-role">Product Designer · Product Owner · Manager</div>
+            <div class="tl-desc">Diseño UI (Figma) y ownership del producto de Markaf — app de marketing voz a voz (referral marketing) que permite a empresas convertir clientes satisfechos en embajadores activos para adquirir nuevos clientes.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">May 2012 – Mar 2017</div>
+            <div class="tl-company">Open International Systems</div>
+            <div class="tl-role">Frontend Developer · Full Stack Engineer · Web Designer</div>
+            <div class="tl-desc">5 años desarrollando interfaces para Open Smartflex, plataforma SaaS enterprise de gestión de utilities (agua, energía, gas) certificada SOC 2 Type 2. Sencha Ext JS, JavaScript, HTML5/CSS3. Code reviews, responsive design, optimización de performance.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- PROJECTS -->
+<!-- ══════════════════════════════════════════════════════════ -->
 <section id="portfolio" class="portfolio-section space-separator">
-    <div class="container">
-        <div class="row mb-5 fade-in">
-            <div class="col-12 d-flex align-items-center mb-4">
-                <h2 class="section-title roboto-bold display-6 mb-0 me-4">
-                    <span style="color: var(--principal-color);">02.</span> Mi Trabajo
-                </h2>
-                <hr class="section-divider flex-grow-1 m-0">
-            </div>
-        </div>
-
-        <!-- Project 1 -->
-        <div class="row project-row mb-5 fade-in" style="animation-delay: 0.1s;">
-            <div class="col-lg-6 mb-4 mb-lg-0 project-image-col">
-                <div class="project-image-wrapper">
-                    <div
-                        class="project-image-placeholder d-flex align-items-center justify-content-center text-center p-4">
-                        <p class="m-0 roboto-medium text-muted">Imagen del Proyecto 1<br><span
-                                class="roboto-regular text-xs">(Añade tu imagen en la carpeta Images)</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 project-content-col d-flex flex-column justify-content-center">
-                <p class="project-overline roboto-regular-italic text-sm mb-2" style="color: var(--principal-color);">
-                    Proyecto Destacado</p>
-                <h3 class="project-title roboto-bold display-6 mb-3">Nombre del Proyecto 1</h3>
-                <div class="project-description-box p-4 mb-3"
-                    style="background-color: var(--navbar-background-color); border-radius: 4px;">
-                    <p class="roboto-regular text-sm m-0">
-                        Una aplicación web construida para [Propósito del proyecto]. Permite a los usuarios [Función
-                        principal 1] y [Función principal 2]. Integrada con una API RESTful para el manejo de datos en
-                        tiempo real.
-                    </p>
-                </div>
-                <ul class="project-tech-list d-flex flex-wrap gap-3 list-unstyled mb-4 roboto-light text-sm">
-                    <li>React</li>
-                    <li>Node.js</li>
-                    <li>MongoDB</li>
-                    <li>Bootstrap</li>
-                </ul>
-                <div class="project-links d-flex gap-3">
-                    <a href="#" target="_blank" class="project-link" title="Ver Código">
-                        <img src="./Images/Icon_ Github.png" alt="GitHub" style="width: 24px;">
-                    </a>
-                    <a href="#" target="_blank" class="project-link" title="Ver Demo">
-                        <!-- Icono de enlace externo genérico -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-external-link">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project 2 (Alternando el diseño) -->
-        <div class="row project-row mb-5 fade-in" style="animation-delay: 0.2s;">
-            <div
-                class="col-lg-6 mb-4 mb-lg-0 project-content-col order-2 order-lg-1 d-flex flex-column justify-content-center text-lg-end">
-                <p class="project-overline roboto-regular-italic text-sm mb-2" style="color: var(--principal-color);">
-                    Proyecto Destacado</p>
-                <h3 class="project-title roboto-bold display-6 mb-3">Nombre del Proyecto 2</h3>
-                <div class="project-description-box p-4 mb-3 text-start text-lg-end"
-                    style="background-color: var(--navbar-background-color); border-radius: 4px;">
-                    <p class="roboto-regular text-sm m-0">
-                        Diseño y desarrollo de una plataforma e-commerce con enfoque en la experiencia de usuario (UX).
-                        Implementación de un flujo de pago simplificado y carrito de compras dinámico.
-                    </p>
-                </div>
-                <ul
-                    class="project-tech-list d-flex flex-wrap justify-content-lg-end gap-3 list-unstyled mb-4 roboto-light text-sm">
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>Figma</li>
-                    <li>Vanilla JS</li>
-                </ul>
-                <div class="project-links d-flex justify-content-lg-end gap-3">
-                    <a href="#" target="_blank" class="project-link" title="Ver Diseño en Behance">
-                        <img src="./Images/Icon_ Behance.png" alt="Behance" style="width: 24px;">
-                    </a>
-                    <a href="#" target="_blank" class="project-link" title="Ver Demo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-external-link">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6 project-image-col order-1 order-lg-2">
-                <div class="project-image-wrapper text-end">
-                    <div
-                        class="project-image-placeholder d-flex align-items-center justify-content-center text-center p-4">
-                        <p class="m-0 roboto-medium text-muted">Imagen del Proyecto 2<br><span
-                                class="roboto-regular text-xs">(Añade tu imagen en la carpeta Images)</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mt-5 fade-in">
-            <a href="https://github.com/cr1c4rd0" target="_blank" class="btn btn-outline">Ver más en GitHub</a>
-        </div>
+  <div class="container">
+    <div class="row mb-4 fade-in">
+      <div class="col-12 d-flex align-items-center mb-4">
+        <h2 class="section-title roboto-bold display-6 mb-0 me-4"><span class="section-num">03.</span> Proyectos</h2>
+        <hr class="section-divider flex-grow-1 m-0">
+      </div>
     </div>
+
+    <!-- Filter Buttons -->
+    <div class="d-flex flex-wrap gap-2 mb-5 fade-in">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="po">Product Owner · Análisis</button>
+      <button class="filter-btn" data-filter="ux">UX/UI Design</button>
+      <button class="filter-btn" data-filter="dev">Desarrollo</button>
+    </div>
+
+    <div class="row g-4" id="projects-grid">
+
+      <!-- ── PRODUCT OWNER / ANÁLISIS ────────────────────── -->
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="po">
+        <div class="proj-card">
+          <div class="proj-sector">GovTech · IA/ML · Colombia</div>
+          <div class="proj-title">RECOMENDADOR</div>
+          <div class="proj-client">Cámara de Comercio de Bogotá · Servinformación</div>
+          <span class="proj-role">Analista Funcional + Product Designer</span>
+          <p class="proj-desc">Motor de recomendación inteligente entrenado con +6M clientes y +24M interacciones. 35+ HUs en 14 épicas: identity graph omnicanal, micro-frontend ccb.org.co, aprendizaje continuo y dashboard Power BI. Usé Claude para documentación dinámica publicada como web.</p>
+          <div class="mt-3">
+            <span class="proj-tag">IA/ML</span><span class="proj-tag">Power BI</span><span class="proj-tag">Claude</span><span class="proj-tag">API REST</span><span class="proj-tag">Micro-frontend</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="po">
+        <div class="proj-card">
+          <div class="proj-sector">Fintech · Contact Center IA · Colombia</div>
+          <div class="proj-title">REVINCULAMOS</div>
+          <div class="proj-client">Crezcamos · Servinformación</div>
+          <span class="proj-role">Analista Funcional + Product Designer</span>
+          <p class="proj-desc">Agente de IA conversacional (Voz + Chat) sobre Genesys Cloud. 18+ HUs en 6 épicas: validación biométrica FaceTec, transacciones, ventas inbound/outbound y gestión de cartera. 15+ diagramas BPMN/Visio hasta v4.1.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Genesys Cloud</span><span class="proj-tag">BPMN</span><span class="proj-tag">FaceTec</span><span class="proj-tag">API REST</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="po">
+        <div class="proj-card">
+          <div class="proj-sector">Comercio Exterior · DIAN · Colombia</div>
+          <div class="proj-title">METIS 360</div>
+          <div class="proj-client">METIS 360 SAS · Servinformación</div>
+          <span class="proj-role">Analista Funcional + Product Designer</span>
+          <p class="proj-desc">Plataforma aduanera con extracción inteligente de documentos (OCR/IA) y generación de archivos EDI para Siglo XXI (DIAN). 36 HUs en 6 épicas. 11 diagramas de flujo en Visio. Matriz de trazabilidad completa.</p>
+          <div class="mt-3">
+            <span class="proj-tag">DIAN · EDI</span><span class="proj-tag">OCR/IA</span><span class="proj-tag">Visio</span><span class="proj-tag">Comercio Exterior</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="po ux">
+        <div class="proj-card">
+          <div class="proj-sector">HRTech · WellTech · SaaS B2B</div>
+          <div class="proj-title">ZENSEI</div>
+          <div class="proj-client">Grupo ZENS · Cafeto Software</div>
+          <span class="proj-role">Product Owner · UX Designer · Brand Design</span>
+          <p class="proj-desc">Plataforma SaaS B2B de bienestar organizacional con agente IA basado en Eneagrama (0→1). Discovery completo: 20 HUs, JTBD + Gherkin + MoSCoW, prototipos Figma, brand identity completa. Stitch/Gemini para prototipado rápido.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">BPMN</span><span class="proj-tag">Stitch</span><span class="proj-tag">0→1</span><span class="proj-tag">Brand</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="po ux">
+        <div class="proj-card">
+          <div class="proj-sector">Seguridad privada · IoT · Colombia</div>
+          <div class="proj-title">Protección en Línea</div>
+          <div class="proj-client">Seguridad Omega · Cafeto Software</div>
+          <span class="proj-role">PO · Scrum Master · Engineering Manager</span>
+          <p class="proj-desc">Sistema integral de seguridad (Web + Mobile) adoptado por +500 localizaciones y +1.000 operativos. Rediseño v1→v2+: acceso biométrico facial, reconocimiento de placas, rondas GPS+QR, funcionamiento offline.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">Atomic Design</span><span class="proj-tag">Scrum</span><span class="proj-tag">IoT</span><span class="proj-tag">Mobile</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="po ux">
+        <div class="proj-card">
+          <div class="proj-sector">MarTech · Referral Marketing · Colombia</div>
+          <div class="proj-title">Markaf</div>
+          <div class="proj-client">Markaf Colombia SAS</div>
+          <span class="proj-role">Product Designer · Product Owner · Manager</span>
+          <p class="proj-desc">App de marketing voz a voz (referral marketing) que convierte clientes satisfechos en embajadores activos. Diseño UI completo en Figma, ownership del producto y gestión del equipo en ciclo de entrega rápida.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">MarTech</span><span class="proj-tag">Mobile App</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── UX/UI DESIGN ────────────────────────────────── -->
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Fintech · Supply Chain Finance · UK</div>
+          <div class="proj-title">Demica</div>
+          <div class="proj-client">Demica · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer + Engineering Manager</span>
+          <p class="proj-desc">Plataforma fintech de supply chain finance (Reverse Factoring). Diseño en Figma (3 versiones). Gestión de equipo distribuido Colombia-India: 58 tasks en Jira, 6 desarrolladores, coordinación con liderazgo de UK.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">Jira</span><span class="proj-tag">Supply Chain</span><span class="proj-tag">UK</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Farmacéutica Fortune 500 · LATAM</div>
+          <div class="proj-title">Abbott PACMAN</div>
+          <div class="proj-client">Abbott Latam · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer</span>
+          <p class="proj-desc">Diseño de aplicación para iPad para Abbott Latam. Interfaz para fuerza de ventas y representantes médicos. Integración con Pitcher y Salesforce. UX optimizado para dispositivos táctiles en entorno farma.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">Pitcher</span><span class="proj-tag">Salesforce</span><span class="proj-tag">iPad</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">MedTech · Healthcare · Fortune 500</div>
+          <div class="proj-title">Baxter International (4 apps)</div>
+          <div class="proj-client">Baxter International · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer</span>
+          <p class="proj-desc">Diseño de 4 aplicaciones para el ecosistema digital Baxter Latam: NutriBax (nutrición clínica), Nefroprotección v1 y v2 (nefrología), Caoba y Research (discovery). Cliente Fortune 500 en healthcare.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">FigJam</span><span class="proj-tag">Healthcare</span><span class="proj-tag">4 apps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">EdTech · Educación Internacional</div>
+          <div class="proj-title">AllOn</div>
+          <div class="proj-client">AllOn · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer</span>
+          <p class="proj-desc">Plataforma web para agencias de reclutamiento estudiantil internacional. Gestión de admisiones, seguimiento de estudiantes y comunicación con escuelas. Diseño en Sketch, Balsamiq y OmniGraffle.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Sketch</span><span class="proj-tag">Balsamiq</span><span class="proj-tag">EdTech</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Coaching · Learning · Mobile iOS</div>
+          <div class="proj-title">Amelio</div>
+          <div class="proj-client">Amelio · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer Mobile</span>
+          <p class="proj-desc">App de coaching y aprendizaje para iOS. Diseño pixel-perfect siguiendo las Human Interface Guidelines de Apple. Flujos de onboarding, sesiones de coaching y seguimiento de progreso personal.</p>
+          <div class="mt-3">
+            <span class="proj-tag">iOS</span><span class="proj-tag">Pixel-perfect</span><span class="proj-tag">Coaching</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Eventos Virtuales · SaaS · EE.UU.</div>
+          <div class="proj-title">6Connex</div>
+          <div class="proj-client">6Connex · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer</span>
+          <p class="proj-desc">Plataforma de eventos virtuales para el mercado americano. Diseño de salas virtuales, networking digital, stands de expositores y flujos de registro y acceso. Herramienta de referencia en el sector post-pandemia.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">SaaS</span><span class="proj-tag">EE.UU.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">HRTech · SaaS · Producto Propio Cafeto</div>
+          <div class="proj-title">Siklus</div>
+          <div class="proj-client">Cafeto Software (producto interno)</div>
+          <span class="proj-role">UX/UI Designer + Análisis Funcional</span>
+          <p class="proj-desc">Plataforma SaaS multi-tenant B2B para gestión de competencias y estructura organizacional. Módulos: Configuración, Diccionario de Competencias, SSO por dominio corporativo. Diseño en Sketch + documentación funcional.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Sketch</span><span class="proj-tag">SaaS</span><span class="proj-tag">HRTech</span><span class="proj-tag">SSO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux po">
+        <div class="proj-card">
+          <div class="proj-sector">EdTech · Cultura · Idiomas · Colombia</div>
+          <div class="proj-title">CCCA</div>
+          <div class="proj-client">Centro Colombo Americano · Cafeto Software</div>
+          <span class="proj-role">UX Researcher + Product Designer</span>
+          <p class="proj-desc">Discovery y rediseño de app móvil + web del Centro Colombo Americano. Entrevistas estructuradas con metodología UX (observación, pain points, ideas), diagramas BPMN, flujos web y mobile documentados.</p>
+          <div class="mt-3">
+            <span class="proj-tag">UX Research</span><span class="proj-tag">BPMN</span><span class="proj-tag">Mobile</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">EntertainmentTech · Fan Engagement · EE.UU.</div>
+          <div class="proj-title">FanCThis / Cintrx</div>
+          <div class="proj-client">FanCThis · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer + Design Systems</span>
+          <p class="proj-desc">Plataforma de entretenimiento para fans. Design System completo Cintrx UI con modo claro y oscuro. Componentes reutilizables, tokens de diseño y guía de estilos para el equipo de desarrollo.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">Design System</span><span class="proj-tag">Dark/Light</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux po">
+        <div class="proj-card">
+          <div class="proj-sector">Ciberseguridad · Houston TX · EE.UU.</div>
+          <div class="proj-title">Alchemi Data</div>
+          <div class="proj-client">Alchemi Data · Cafeto Software</div>
+          <span class="proj-role">Análisis Funcional · QA Definition</span>
+          <p class="proj-desc">Definición de requerimientos y estrategia de QA para plataforma de ciberseguridad en Houston, TX. Documentación funcional en Word y Excel para equipo de desarrollo. Proyecto de nicho de alto valor técnico.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Análisis Funcional</span><span class="proj-tag">QA</span><span class="proj-tag">Ciberseguridad</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux po">
+        <div class="proj-card">
+          <div class="proj-sector">Staffing · Staff Augmentation · Colombia</div>
+          <div class="proj-title">C94</div>
+          <div class="proj-client">C94 · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer + Service Blueprint + PM</span>
+          <p class="proj-desc">Plataforma para contratar personas en modalidad de staffing: búsqueda por rol y skills, visualización de perfil y gestión del proceso. Service Blueprint completo + diseño en Figma/FigJam + gestión Gantt.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">Service Blueprint</span><span class="proj-tag">Staffing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux po">
+        <div class="proj-card">
+          <div class="proj-sector">Packaging Design Review · Annotation</div>
+          <div class="proj-title">doQmind</div>
+          <div class="proj-client">doQmind · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer + Análisis Funcional</span>
+          <p class="proj-desc">Plataforma web de revisión y anotación de diseños de empaque. Flujos de aprobación multi-stakeholder, herramientas de anotación visual y gestión de versiones de documentos. Jira + Confluence + Figma.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">Confluence</span><span class="proj-tag">Jira</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Home Care · Aseguradoras · EE.UU.</div>
+          <div class="proj-title">AssuriCare</div>
+          <div class="proj-client">AssuriCare · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer (Desktop + Mobile)</span>
+          <p class="proj-desc">Plataforma de gestión de cuidado domiciliario que conecta familias, cuidadores, agencias y aseguradoras — procesando $500M+. Diseño para desktop y mobile con enfoque en accesibilidad y flujos multi-actor.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">Desktop + Mobile</span><span class="proj-tag">Healthcare</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Real Estate · Mobile · California EE.UU.</div>
+          <div class="proj-title">Boxia</div>
+          <div class="proj-client">Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer Mobile</span>
+          <p class="proj-desc">Plataforma mobile para compra, venta y gestión de bienes raíces en California. Gestión de agentes inmobiliarios, listados de propiedades y flujos de negociación digital. Diseño en Figma para iOS/Android.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">Mobile</span><span class="proj-tag">Real Estate</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Real Estate · Web · Australia</div>
+          <div class="proj-title">BTT</div>
+          <div class="proj-client">Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer</span>
+          <p class="proj-desc">Plataforma web para compra y venta de bienes raíces en Australia. Diseño de flujos de búsqueda, ficha de propiedad, contacto con agentes y proceso de oferta. Revisión de assets y diseño final.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Design</span><span class="proj-tag">Real Estate</span><span class="proj-tag">Australia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Greeting Cards · Mobile · California</div>
+          <div class="proj-title">Greet / GreetBox</div>
+          <div class="proj-client">Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer Mobile</span>
+          <p class="proj-desc">App mobile para compra y venta de tarjetas de greeting en California. Catálogo de tarjetas, personalización, flujo de compra y envío digital. Diseño en Figma para iOS/Android con énfasis en experiencia emocional.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">Mobile</span><span class="proj-tag">e-Commerce</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">HealthTech · Gestión Médica</div>
+          <div class="proj-title">Bundl</div>
+          <div class="proj-client">Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer</span>
+          <p class="proj-desc">Plataforma web de gestión de pacientes médicos. Historial clínico, programación de citas, gestión de tratamientos y comunicación entre profesionales de la salud. Figma + FigJam para research.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">HealthTech</span><span class="proj-tag">Web</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Inclusive Design · Adultos mayores</div>
+          <div class="proj-title">Ex-Situ</div>
+          <div class="proj-client">Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer (Inclusive Design)</span>
+          <p class="proj-desc">Plataforma web para adultos mayores: organización del testamento de forma sencilla a través de tarjetas temáticas. Diseño inclusivo con tipografías grandes, contraste alto y flujos simplificados. Sketch.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Sketch</span><span class="proj-tag">Inclusive Design</span><span class="proj-tag">Accesibilidad</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Agencia Digital · EE.UU.</div>
+          <div class="proj-title">305 Spin Inc</div>
+          <div class="proj-client">305 Spin Inc · Cafeto Software</div>
+          <span class="proj-role">UX/UI Design + Wireframing</span>
+          <p class="proj-desc">Rediseño de plataforma para agencia digital americana. Arquitectura de información, wireframes de baja fidelidad en FigJam y diseño final en Figma. Enfoque en conversión y claridad de propuesta de valor.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">FigJam</span><span class="proj-tag">Wireframing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Liderazgo · Consultoría · Australia / 26 países</div>
+          <div class="proj-title">LIW</div>
+          <div class="proj-client">LIW (liw3.com) · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer + Brand</span>
+          <p class="proj-desc">Rediseño de plataforma y brand para consultora global de liderazgo con presencia en 26 países. Diseño de interfaces y assets visuales en Sketch + Illustrator. Coherencia visual global entre regiones.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Sketch</span><span class="proj-tag">Illustrator</span><span class="proj-tag">Brand</span><span class="proj-tag">Global</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Café · Exportación · Colombia</div>
+          <div class="proj-title">Bazar</div>
+          <div class="proj-client">Cafeto Software</div>
+          <span class="proj-role">UX/UI Design + Product Discovery</span>
+          <p class="proj-desc">Plataforma de exportación de café colombiano. Discovery y diseño de flujos para compradores internacionales, catálogo de fincas y cafés especiales, y gestión de pedidos de exportación. Figma + FigJam.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">FigJam</span><span class="proj-tag">Discovery</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Fintech · Optimización Fiscal · Colombia</div>
+          <div class="proj-title">Earnd</div>
+          <div class="proj-client">Earnd.co · Cafeto Software</div>
+          <span class="proj-role">UX/UI Designer</span>
+          <p class="proj-desc">Plataforma para identificar y optimizar recompensas monetarias a través de políticas fiscales. Flujos de análisis financiero, reportes de ahorro identificado y recomendaciones personalizadas. Figma.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">Fintech</span><span class="proj-tag">Fiscal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux">
+        <div class="proj-card">
+          <div class="proj-sector">Agro · Investigación Internacional · Colombia</div>
+          <div class="proj-title">CIAT</div>
+          <div class="proj-client">CIAT — Centro Int'l de Agricultura Tropical</div>
+          <span class="proj-role">UX/UI Design + WordPress Dev</span>
+          <p class="proj-desc">Rediseño web y desarrollo WordPress para el Centro Internacional de Agricultura Tropical. Arquitectura de contenidos, diseño en Figma e implementación WordPress. Documentación técnica entregada.</p>
+          <div class="mt-3">
+            <span class="proj-tag">WordPress</span><span class="proj-tag">Figma</span><span class="proj-tag">Nov 2022</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="ux po">
+        <div class="proj-card">
+          <div class="proj-sector">HRTech interno · Cafeto Software</div>
+          <div class="proj-title">Applicants (ATS)</div>
+          <div class="proj-client">Cafeto Software (producto interno)</div>
+          <span class="proj-role">UX/UI Design + Análisis Funcional</span>
+          <p class="proj-desc">Sistema de seguimiento de candidatos (ATS) interno de Cafeto para gestión del proceso de selección de desarrolladores. Discovery, diseño de flujos y prototipado en Figma. Publicado en siklus.co.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Figma</span><span class="proj-tag">ATS</span><span class="proj-tag">Discovery</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── DESARROLLO ──────────────────────────────────── -->
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="dev">
+        <div class="proj-card">
+          <div class="proj-sector">SaaS Enterprise · Utilities · LATAM</div>
+          <div class="proj-title">Open Smartflex</div>
+          <div class="proj-client">Open International Systems</div>
+          <span class="proj-role">Frontend Developer · Full Stack Engineer</span>
+          <p class="proj-desc">Plataforma SaaS enterprise de gestión de servicios públicos (agua, energía, gas) SOC 2 Type 2. 5 años desarrollando con Sencha Ext JS, JavaScript, HTML5/CSS3. Code reviews, responsive design y optimización de performance en producción.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Sencha Ext JS</span><span class="proj-tag">JavaScript</span><span class="proj-tag">HTML5</span><span class="proj-tag">SOC 2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="dev ux">
+        <div class="proj-card">
+          <div class="proj-sector">ERP Oil & Gas · EE.UU.</div>
+          <div class="proj-title">Enertia Software</div>
+          <div class="proj-client">Enertia Software · Cafeto Software</div>
+          <span class="proj-role">UX/UI Design + Frontend Developer</span>
+          <p class="proj-desc">ERP para la industria de oil & gas americana. Diseño de interfaces y desarrollo frontend con Angular y C# .NET. Pipeline CI/CD en Bitbucket. Trabajo en sistema de alto volumen de datos y procesos críticos de negocio.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Angular</span><span class="proj-tag">C# .NET</span><span class="proj-tag">Bitbucket CI/CD</span><span class="proj-tag">ERP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-item fade-in" data-cat="dev ux">
+        <div class="proj-card">
+          <div class="proj-sector">App Mobile · Flutter</div>
+          <div class="proj-title">Jacinto</div>
+          <div class="proj-client">Cafeto Software</div>
+          <span class="proj-role">UX/UI Design + Desarrollo Flutter</span>
+          <p class="proj-desc">App mobile multiplataforma desarrollada en Flutter. Diseño en Sketch con roles Propietario y SuperAdmin. Modelado de datos con GraphML. Implementación de componentes UI nativos para iOS y Android.</p>
+          <div class="mt-3">
+            <span class="proj-tag">Flutter</span><span class="proj-tag">Sketch</span><span class="proj-tag">GraphML</span><span class="proj-tag">Mobile</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+
+    <div class="text-center mt-5 fade-in">
+      <a href="https://www.behance.net/cristianri30a9" target="_blank" class="btn btn-outline me-3">Ver Portafolio en Behance</a>
+      <a href="https://github.com/cr1c4rd0" target="_blank" class="btn btn-outline">GitHub</a>
+    </div>
+  </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="contact-section space-separator text-center" style="padding: 100px 0;">
-    <div class="container fade-in">
-        <p class="greeting roboto-light text-md mb-2" style="color: var(--principal-color);">03. ¿Qué sigue?</p>
-        <h2 class="section-title roboto-bold display-4 mb-4">Ponte en Contacto</h2>
-        <p class="contact-description roboto-regular text-sm mx-auto mb-5"
-            style="max-width: 600px; color: var(--regular-color);">
-            Actualmente estoy buscando nuevas oportunidades. Si tienes una pregunta o simplemente quieres saludar, ¡haré
-            todo lo posible por responderte!
-        </p>
-        <a href="mailto:cristianricardo87@gmail.com"
-            class="btn btn-primary d-inline-flex align-items-center btn-lg mb-5">
-            Saludar <span class="ms-2">👋</span>
-        </a>
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CERTIFICATIONS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="certifications" class="space-separator">
+  <div class="container">
+    <div class="row mb-5 fade-in">
+      <div class="col-12 d-flex align-items-center mb-4">
+        <h2 class="section-title roboto-bold display-6 mb-0 me-4"><span class="section-num">04.</span> Certificaciones</h2>
+        <hr class="section-divider flex-grow-1 m-0">
+      </div>
     </div>
+
+    <!-- Inteligencia Artificial -->
+    <div class="mb-5 fade-in">
+      <p class="roboto-medium mb-3" style="color:var(--principal-color);font-size:.82rem;letter-spacing:.1em">INTELIGENCIA ARTIFICIAL</p>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="cert-card anthropic">
+            <span class="cert-badge badge-anthropic">ANTHROPIC</span>
+            <div class="cert-title">Claude Code in Action</div>
+            <div class="cert-year">Marzo 2026 · No: dy5uox76ohds · <a href="https://verify.skilljar.com/c/dy5uox76ohds" target="_blank" style="color:var(--principal-color)">Verificar</a></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card anthropic">
+            <span class="cert-badge badge-anthropic">ANTHROPIC</span>
+            <div class="cert-title">Introduction to Claude Cowork</div>
+            <div class="cert-year">Anthropic · Certificate of Completion</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card anthropic">
+            <span class="cert-badge badge-anthropic">ANTHROPIC</span>
+            <div class="cert-title">Claude 101</div>
+            <div class="cert-year">Anthropic · Certificate of Completion</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card ibm">
+            <span class="cert-badge badge-ibm">IBM · COGNITIVE CLASS</span>
+            <div class="cert-title">Python 101 for Data Science</div>
+            <div class="cert-year">Junio 2024 · cognitiveclass.ai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto & Metodologías -->
+    <div class="mb-5 fade-in">
+      <p class="roboto-medium mb-3" style="color:var(--principal-color);font-size:.82rem;letter-spacing:.1em">PRODUCTO & METODOLOGÍAS</p>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="cert-card scrum">
+            <span class="cert-badge badge-scrum">SCRUMSTUDY</span>
+            <div class="cert-title">Scrum Fundamentals Certified (SFC™)</div>
+            <div class="cert-year">Septiembre 2025 · ID: 1103414</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Design Thinking con Minds Garage</div>
+            <div class="cert-year">Marzo 2018 · platzi.com/@cr1c4rd0</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card udemy">
+            <span class="cert-badge badge-udemy">UDEMY</span>
+            <div class="cert-title">Innovación en Design Thinking 2017</div>
+            <div class="cert-year">Agosto 2017 · No: UC-943O2FCF</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Metodologías de Diseño de Producto</div>
+            <div class="cert-year">Platzi · diploma-metodologias-diseno-producto</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Gestión de Producto</div>
+            <div class="cert-year">Platzi · diploma-gestion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UX / UI Design -->
+    <div class="mb-5 fade-in">
+      <p class="roboto-medium mb-3" style="color:var(--principal-color);font-size:.82rem;letter-spacing:.1em">UX / UI DESIGN</p>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="cert-card coderhouse">
+            <span class="cert-badge badge-coderhouse">CODERHOUSE</span>
+            <div class="cert-title">Diseño UX/UI Avanzado</div>
+            <div class="cert-year">Diciembre 2021 · 40 horas</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Diseño UX — Experiencia de usuario + Figma</div>
+            <div class="cert-year">Platzi · diploma-diseno-interfaces-ux</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Diseño Básico de UI</div>
+            <div class="cert-year">Platzi · diploma-basico-ui</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Colaboración Diseño-Desarrollo</div>
+            <div class="cert-year">Platzi · diploma-colaboracion-diseno-desarrollo</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Interfaces Móviles</div>
+            <div class="cert-year">Platzi · diploma-interfaces-moviles</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Diseño para Programadores</div>
+            <div class="cert-year">Platzi · diploma-diseno-programadores</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Sketch para Diseño de Interfaces</div>
+            <div class="cert-year">Platzi · diploma-sketch</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card udemy">
+            <span class="cert-badge badge-udemy">UDEMY · PABLO STANLEY</span>
+            <div class="cert-title">Mobile App Design: Sketches to Interactive Prototypes</div>
+            <div class="cert-year">Noviembre 2015 · No: UC-MYE54228</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desarrollo & Programación -->
+    <div class="mb-5 fade-in">
+      <p class="roboto-medium mb-3" style="color:var(--principal-color);font-size:.82rem;letter-spacing:.1em">DESARROLLO & PROGRAMACIÓN</p>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Frontend Developer</div>
+            <div class="cert-year">Platzi · diploma-frontend-developer</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Frontend Developer Práctico</div>
+            <div class="cert-year">Platzi · diploma-frontend-developer-practico</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Arquitecturas CSS</div>
+            <div class="cert-year">Platzi · diploma-arquitecturas-css</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">FastAPI</div>
+            <div class="cert-year">Platzi · diploma-fastapi</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Python — Fundamentos, Funciones y PIP</div>
+            <div class="cert-year">Platzi · diploma-python / funciones / pip</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Fundamentos de Programación</div>
+            <div class="cert-year">Platzi · fundamentosProgramación</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Desarrollo Web</div>
+            <div class="cert-year">Platzi · DesarrolloWeb</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card ibm">
+            <span class="cert-badge badge-ibm">UCEVA</span>
+            <div class="cert-title">Taller de Data Analytics</div>
+            <div class="cert-year">Universidad Central del Valle</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marketing & Otros -->
+    <div class="mb-5 fade-in">
+      <p class="roboto-medium mb-3" style="color:var(--principal-color);font-size:.82rem;letter-spacing:.1em">MARKETING & OTROS</p>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="cert-card udemy">
+            <span class="cert-badge badge-udemy">UDEMY</span>
+            <div class="cert-title">Introducción al Marketing Digital para Emprendedores</div>
+            <div class="cert-year">Enero 2014 · No: UC-1EMBLP4S</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Illustrator</div>
+            <div class="cert-year">Platzi · diploma-illustrator</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="cert-card platzi">
+            <span class="cert-badge badge-platzi">PLATZI</span>
+            <div class="cert-title">Animación y Videojuegos</div>
+            <div class="cert-year">Platzi · diploma-animacion-videojuegos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CONTACT -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="contact" class="contact-section space-separator text-center" style="padding:100px 0">
+  <div class="container fade-in">
+    <p class="greeting roboto-light text-md mb-2" style="color:var(--principal-color)">05. ¿Trabajamos juntos?</p>
+    <h2 class="section-title roboto-bold display-4 mb-4">Hablemos</h2>
+    <p class="contact-description roboto-regular text-sm mx-auto mb-5" style="max-width:640px;color:var(--regular-color)">
+      Disponible para roles de Product Owner, Analista Funcional o Product Designer — remoto o híbrido.
+    </p>
+    <a href="mailto:cristianricardo87@gmail.com" class="btn btn-primary d-inline-flex align-items-center btn-lg mb-4">
+      Escríbeme <span class="ms-2">👋</span>
+    </a>
+    <div class="mt-2">
+      <p class="roboto-light text-xs" style="color:var(--regular-color);opacity:.7">
+        <a href="https://www.linkedin.com/in/cristian-ricardo/" target="_blank" style="color:var(--principal-color);text-decoration:none">LinkedIn</a> ·
+        <a href="https://www.behance.net/cristianri30a9" target="_blank" style="color:var(--principal-color);text-decoration:none">Behance</a> ·
+        <a href="https://github.com/cr1c4rd0" target="_blank" style="color:var(--principal-color);text-decoration:none">GitHub</a>
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- Footer -->
 <footer class="text-center py-4 mt-5">
-    <p class="roboto-light text-xs m-0" style="color: var(--regular-color); opacity: 0.7;">
-        Diseñado y construido por Cristian Ricardo
-    </p>
+  <p class="roboto-light text-xs m-0" style="color:var(--regular-color);opacity:.7">
+    Diseñado y construido por Cristian Ricardo · Cali, Colombia
+  </p>
 </footer>
 
 <!-- Social -->
 <div class="social">
-    <div class="row ">
-        <div class="col-md">
-            <a href="https://github.com/cr1c4rd0" target="_blank"><img src="./Images/Icon_ Github.png"></a>
-        </div>
-    </div>
-    <div class="row social__behance">
-        <div class="col-md">
-            <a href="https://www.behance.net/cristianri30a9" target="_blank"><img src="./Images/Icon_ Behance.png"></a>
-        </div>
-    </div>
-    <div class="row social__linkedin">
-        <div class="col-md">
-            <a href="https://www.linkedin.com/in/cristian-ricardo/" target="_blank"><img
-                    src="./Images/Icon_ Linkedin.png"></a>
-        </div>
-    </div>
+  <div class="row"><div class="col-md"><a href="https://github.com/cr1c4rd0" target="_blank"><img src="./Images/Icon_ Github.png" alt="GitHub"></a></div></div>
+  <div class="row social__behance"><div class="col-md"><a href="https://www.behance.net/cristianri30a9" target="_blank"><img src="./Images/Icon_ Behance.png" alt="Behance"></a></div></div>
+  <div class="row social__linkedin"><div class="col-md"><a href="https://www.linkedin.com/in/cristian-ricardo/" target="_blank"><img src="./Images/Icon_ Linkedin.png" alt="LinkedIn"></a></div></div>
 </div>
 
-<!-- Back to Top Button -->
+<!-- Back to Top -->
 <button id="backToTopBtn" title="Volver arriba">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up">
-        <line x1="12" y1="19" x2="12" y2="5"></line>
-        <polyline points="5 12 12 5 19 12"></polyline>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline>
+  </svg>
 </button>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
-    // Back to top button logic
-    let mybutton = document.getElementById("backToTopBtn");
+  // Back to top
+  const mybutton = document.getElementById("backToTopBtn");
+  window.onscroll = () => {
+    mybutton.style.opacity = (document.documentElement.scrollTop > 100) ? "1" : "0";
+    mybutton.style.visibility = (document.documentElement.scrollTop > 100) ? "visible" : "hidden";
+  };
+  mybutton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-    // When the user scrolls down 100px from the top of the document, show the button
-    window.onscroll = function () { scrollFunction() };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            mybutton.style.opacity = "1";
-            mybutton.style.visibility = "visible";
-        } else {
-            mybutton.style.opacity = "0";
-            mybutton.style.visibility = "hidden";
-        }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    mybutton.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+  // Fade-in on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
     });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.fade-in').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+
+  // Project filter
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.proj-item').forEach(item => {
+        if (filter === 'all' || item.dataset.cat.split(' ').includes(filter)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
 </script>
-
 </body>
-
 </html>
